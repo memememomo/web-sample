@@ -1,0 +1,7 @@
+Web Application Samples
+
+■ Music Random Player
+- Mojolicious::Lite
+- Text::Xslate
+- HTML5 audio
+- jQuery

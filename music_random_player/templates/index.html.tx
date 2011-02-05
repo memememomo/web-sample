@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
+    <title>Music Random Player</title>
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="all">
+  </head>
+  <body>
+    <h1>Music Random Player</h1>
+    <div id="player">
+      TITLE: <span id="titleArea"></span>
+      <div>
+        <audio id="audioObj" src="" controls>お使いのブラウザには対応しておりません。</audio>
+      </div>
+      <input type="button" value="Next" id="nextButton"><br>
+    </div>
+    <script type="text/javascript" src="/js/player.js"></script>
+    <script type="text/javascript">
+      $(function() {
+         var musicPlayer = new MusicPlayer('<:$music_url:>', $("#audioObj"), $("#titleArea"));
+
+         $('#nextButton').click(function() {
+            musicPlayer.nextMusic();
+         });
+        
+         musicPlayer.check();
+         if ( musicPlayer.ext == null ) {
+           $('#nextButton').attr('disabled', 'disabled');
+         } 
+      });
+    </script>
+  </body>
+</html>
